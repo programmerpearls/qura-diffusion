@@ -45,7 +45,6 @@ export default function HomeLayout({children}: {children: React.ReactNode}) {
     if (data.completed) {
       setIsImageCompleted(true);
     } else {
-      console.log('data', data);
       console.log(`Progress: ${data.step} steps completed.`);
     }
   };

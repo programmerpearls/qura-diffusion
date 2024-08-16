@@ -11,7 +11,6 @@ const Gallery = () => {
   return (
     <div className="page-container">
       <div className="img-gallery">
-        {/* Check if there are generated images */}
         {generatedImages.length > 0 ? (
           generatedImages.map((itemUrl, index) => (
             <div className="img-gallery__item" key={index}>
@@ -23,11 +22,17 @@ const Gallery = () => {
                   alt={`Image ${index + 1}`}
                 />
                 <figcaption>Image {`#${index + 1}`}</figcaption>
+                <a 
+                  href={itemUrl} 
+                  download={`image-${index + 1}.jpg`} 
+                  className="download-button"
+                >
+                  Download
+                </a>
               </figure>
             </div>
           ))
         ) : (
-          // Display a message or placeholder when there are no images
           <div className="no-images-message">
             <p>No images available in the gallery.</p>
           </div>
